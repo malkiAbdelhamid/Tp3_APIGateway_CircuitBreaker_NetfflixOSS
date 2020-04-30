@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ms-registry" />
+        <module name="cloud-gateway" />
+        <module name="dashboard" />
+        <module name="ms-formation" />
+        <module name="ms-scolarite" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloud-gateway" target="1.8" />
+      <module name="dashboard" target="1.8" />
+      <module name="ms-formation" target="1.8" />
+      <module name="ms-registry" target="1.8" />
+      <module name="ms-scolarite" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cloud-gateway" options="-parameters" />
+      <module name="dashboard" options="-parameters" />
+      <module name="ms-formation" options="-parameters" />
+      <module name="ms-registry" options="-parameters" />
+      <module name="ms-scolarite" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,25 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: route1
+          predicates:
+            - Path=/service-formation/**
+          filters:
+            - RewritePath=/service-formation/(?<s>.*), /${s}
+            - name: CircuitBreaker
+              args:
+                name: fallbck-masformation
+                fallbackuri: forward:/defaultFormations
+          uri: lb://ms-formation
+
+        - id: route2
+          predicates:
+            - Path=/scolarite/**
+          filters:
+            - RewritePath=/scolarite/(?<s>.*), /${s}
+            - name: CircuitBreaker
+              args:
+                name: fallbck-masscolarite
+                fallbackuri: forward:/defaultScolarite
+          uri: lb://ms-scolarite
